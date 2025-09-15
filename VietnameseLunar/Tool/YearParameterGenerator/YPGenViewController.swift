@@ -97,7 +97,8 @@ class YPGenViewController: UIViewController {
         view.endEditing(true)
         
         let leapMonth = Int(leapMonthTextField.text ?? "0") ?? 0
-        guard leapMonth >= 0 && leapMonth <= 12 else { return }
+        let months = monthsView.months
+        guard (leapMonth >= 0) && (leapMonth <= 12) && (months.count == 12) else { return }
         if (leapMonth == 0) {
             leapMonthFullSwitch.isOn = false
         }
